@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+
+export const dynamic = "force-dynamic";
 import { useDashboard } from "@/hooks/useDashboard";
 import { DashboardShell } from "@/components/organisms/DashboardShell";
 import { DashboardHeader } from "@/components/organisms/DashboardHeader";
