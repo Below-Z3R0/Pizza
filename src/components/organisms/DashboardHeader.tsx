@@ -39,14 +39,6 @@ export function DashboardHeader({ quiebres, sobrecompras, ok, sinDatos, total, f
             subtitle={f.tipo === "ok" ? `de ${total} items` : undefined}
             icon={f.icon}
             variant={f.variant}
-            active={filtroActivo === f.tipo}
-            onClick={() => {
-              if (f.tipo === "sin_datos") {
-                onAbrirSinDatos();
-              } else {
-                onFiltrar(filtroActivo === f.tipo ? null : f.tipo);
-              }
-            }}
           />
         ))}
       </div>

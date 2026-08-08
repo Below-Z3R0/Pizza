@@ -65,21 +65,21 @@
   --text-body: #BFB8D0;
   --text-muted: #857A9E;
 
-  --accent: #9F86E0;
-  --accent-mid: #B8AEE0;
-  --accent-light: #D0C7ED;
-  --accent-soft: rgba(159, 134, 224, 0.12);
-  --accent-alt: #7E64C8;
+  --accent: #8E78C7;
+  --accent-mid: #A695D2;
+  --accent-light: #BFB0DE;
+  --accent-soft: rgba(142, 120, 199, 0.1);
+  --accent-alt: #7159B0;
 
   --border-subtle: #2A2438;
   --border-mid: #3B324E;
-  --border-glow: rgba(159, 134, 224, 0.16);
+  --border-glow: rgba(142, 120, 199, 0.14);
 
-  --bg-grid: rgba(159, 134, 224, 0.025);
-  --bg-blob-1: rgba(159, 134, 224, 0.08);
-  --bg-blob-2: rgba(120, 180, 220, 0.05);
-  --bg-blob-3: rgba(184, 174, 224, 0.04);
-  --bg-blob-4: rgba(126, 100, 200, 0.06);
+  --bg-grid: rgba(142, 120, 199, 0.02);
+  --bg-blob-1: rgba(142, 120, 199, 0.07);
+  --bg-blob-2: rgba(120, 180, 220, 0.04);
+  --bg-blob-3: rgba(184, 174, 224, 0.03);
+  --bg-blob-4: rgba(113, 89, 176, 0.05);
 }
 
 .content-container {
