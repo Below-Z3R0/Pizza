@@ -50,5 +50,3 @@ export interface Alerta {
   tipo: TipoAlerta;
   mensaje: string;
 }
-
-export type MetodoProyeccion = "mediana" | "media_movil" | "media_ponderada";
