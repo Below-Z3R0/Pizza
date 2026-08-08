@@ -1,0 +1,169 @@
+@import "tailwindcss";
+
+@theme {
+  /* ===== FONDOS ===== */
+  --color-page: var(--bg-page);
+  --color-card: var(--bg-card);
+  --color-surface: var(--bg-surface);
+  --color-hover: var(--bg-hover);
+
+  /* ===== TEXTO ===== */
+  --color-main: var(--text-main);
+  --color-dim: var(--text-body);
+  --color-muted: var(--text-muted);
+
+  /* ===== ACENTOS ===== */
+  --color-accent: var(--accent);
+  --color-accent-mid: var(--accent-mid);
+  --color-accent-light: var(--accent-light);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-alt: var(--accent-alt);
+
+  /* ===== BORDES ===== */
+  --color-border-subtle: var(--border-subtle);
+  --color-border-mid: var(--border-mid);
+  --color-border-glow: var(--border-glow);
+
+  /* ===== TIPOGRAFÍA ===== */
+  --font-serif: var(--font-serif), Georgia, serif;
+  --font-sans: var(--font-sans), Inter, Helvetica, Arial, sans-serif;
+}
+
+/* ================================================================
+   TEMA LIGHT — Tonos cálidos y suaves
+   ================================================================ */
+.light {
+  --bg-page: #FAF8F5;
+  --bg-card: #FFFFFE;
+  --bg-surface: #F3EFE8;
+  --bg-hover: #EDE7DC;
+
+  --text-main: #2A2520;
+  --text-body: #5A5249;
+  --text-muted: #9A8E80;
+
+  --accent: #5B5BD6;
+  --accent-mid: #7C3AED;
+  --accent-light: #A78BFA;
+  --accent-soft: rgba(91, 91, 214, 0.08);
+  --accent-alt: #4F46E5;
+
+  --border-subtle: #EFE9DD;
+  --border-mid: #E5DDD0;
+  --border-glow: rgba(91, 91, 214, 0.15);
+
+  --bg-grid: rgba(42, 37, 32, 0.025);
+  --bg-blob-1: rgba(91, 91, 214, 0.08);
+  --bg-blob-2: rgba(124, 58, 237, 0.06);
+  --bg-blob-3: rgba(167, 139, 250, 0.05);
+  --bg-blob-4: rgba(79, 70, 229, 0.07);
+}
+
+/* ================================================================
+   TEMA DARK — Profundo y sofisticado
+   ================================================================ */
+.dark {
+  --bg-page: #0F172A;
+  --bg-card: #1E293B;
+  --bg-surface: #334155;
+  --bg-hover: #475569;
+
+  --text-main: #F8FAFC;
+  --text-body: #94A3B8;
+  --text-muted: #64748B;
+
+  --accent: #818CF8;
+  --accent-mid: #A78BFA;
+  --accent-light: #C4B5FD;
+  --accent-soft: rgba(129, 140, 248, 0.12);
+  --accent-alt: #6366F1;
+
+  --border-subtle: #1E293B;
+  --border-mid: #334155;
+  --border-glow: rgba(129, 140, 248, 0.15);
+
+  --bg-grid: rgba(248, 250, 252, 0.025);
+  --bg-blob-1: rgba(129, 140, 248, 0.1);
+  --bg-blob-2: rgba(167, 139, 250, 0.08);
+  --bg-blob-3: rgba(196, 181, 253, 0.06);
+  --bg-blob-4: rgba(99, 102, 241, 0.09);
+}
+
+/* ================================================================
+   UTILIDADES
+   ================================================================ */
+.content-container {
+  margin-inline: auto;
+  padding-inline: calc(var(--spacing) * 6);
+
+  @media (width >= 48rem) {
+    padding-inline: calc(var(--spacing) * 12);
+  }
+}
+
+input {
+  --tw-outline-style: none;
+  outline-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Grid pattern decorativo */
+.bg-grid-pattern {
+  background-image:
+    linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+}
+
+.bg-grid-mask {
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 50%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 50%, transparent 100%);
+}
+
+/* Blobs animados */
+@keyframes blob-drift-1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.05); }
+  66% { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes blob-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-30px, 30px) scale(1.1); }
+  66% { transform: translate(20px, -30px) scale(0.95); }
+}
+
+@keyframes blob-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(20px, 30px) scale(1.08); }
+}
+
+@keyframes blob-drift-4 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(25px, -25px) scale(1.06); }
+  66% { transform: translate(-15px, 35px) scale(0.94); }
+}
+
+.animate-blob-1 {
+  animation: blob-drift-1 25s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: blob-drift-2 30s ease-in-out infinite;
+}
+
+.animate-blob-3 {
+  animation: blob-drift-3 35s ease-in-out infinite;
+}
+
+.animate-blob-4 {
+  animation: blob-drift-4 28s ease-in-out infinite;
+}
