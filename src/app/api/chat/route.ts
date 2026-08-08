@@ -75,7 +75,7 @@ ${contexto}`;
     });
   } catch (e) {
     return NextResponse.json(
-      return NextResponse.json({ error: `Error al conectar con MiniMax: ${e instanceof Error ? e.message : "Desconocido"}` },
+      { error: `Error al conectar con MiniMax: ${e instanceof Error ? e.message : "Desconocido"}` },
       { status: 500 }
     );
   }
