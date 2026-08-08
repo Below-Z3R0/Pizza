@@ -1,5 +1,5 @@
 // ================================================================
-// DashboardHeader — KPIs clickeables como filtro
+// DashboardHeader — KPIs como filtros clickeables (versión original)
 // ================================================================
 "use client";
 
@@ -31,16 +31,32 @@ export function DashboardHeader({ quiebres, sobrecompras, ok, sinDatos, total, f
   return (
     <div className="space-y-2">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {filtros.map((f) => (
-          <StatCard
-            key={f.tipo}
-            title={f.label}
-            value={valores[f.tipo]}
-            subtitle={f.tipo === "ok" ? `de ${total} items` : undefined}
-            icon={f.icon}
-            variant={f.variant}
-          />
-        ))}
+        {filtros.map((f) => {
+          const activo = filtroActivo === f.tipo;
+          return (
+            <button
+              key={f.tipo}
+              onClick={() => {
+                if (f.tipo === "sin_datos") {
+                  onAbrirSinDatos();
+                  return;
+                }
+                onFiltrar(activo ? null : f.tipo);
+              }}
+              className={`text-left transition-all duration-200 ${
+                activo ? "ring-2 ring-accent scale-[1.02]" : ""
+              }`}
+            >
+              <StatCard
+                title={f.label}
+                value={valores[f.tipo]}
+                subtitle={f.tipo === "ok" ? `de ${total} items` : undefined}
+                icon={f.icon}
+                variant={f.variant}
+              />
+            </button>
+          );
+        })}
       </div>
       {filtroActivo && (
         <div className="flex items-center gap-2">
