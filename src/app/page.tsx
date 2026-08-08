@@ -11,6 +11,7 @@ import { MetodosInfoDialog } from "@/components/molecules/MetodosInfoDialog";
 import { AnomaliasSection } from "@/components/molecules/AnomaliasSection";
 import { ProveedoresList } from "@/components/molecules/ProveedoresList";
 import { ArchivosProblematicosModal } from "@/components/molecules/ArchivosProblematicosModal";
+import { ChatBox } from "@/components/molecules/ChatBox";
 import { Badge } from "@/components/ui";
 import { FadeUp } from "@/components/animations/Animations";
 
@@ -88,6 +89,7 @@ export default function DashboardPage() {
 
       <MetodosInfoDialog open={infoOpen} onClose={() => setInfoOpen(false)} />
       <ArchivosProblematicosModal open={sinDatosOpen} onClose={() => setSinDatosOpen(false)} sinDatos={sinDatosList} onEliminarArchivos={eliminarSinDatos} />
+      <ChatBox alertas={filtradas} />
     </main>
   );
 }
