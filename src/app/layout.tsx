@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit, Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "sonner";
-import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { Background } from "@/components/Background";
 import { ThemeProvider } from "@/hooks/themeProvider";
@@ -55,7 +54,6 @@ export default function RootLayout({
           <Background />
           {children}
           <Toaster richColors position="top-center" />
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
