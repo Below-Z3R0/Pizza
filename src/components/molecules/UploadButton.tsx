@@ -3,14 +3,13 @@
 import { useRef, useState } from "react";
 import { Upload, Loader2 } from "lucide-react";
 import { toast } from "sonner";
+import { useRouter } from "next/navigation";
+import { procesarCSV } from "@/services/upload.service";
 
-interface UploadButtonProps {
-  onUpload: (file: File) => Promise<string>;
-}
-
-export function UploadButton({ onUpload }: UploadButtonProps) {
+export function UploadButton() {
   const [uploading, setUploading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+  const router = useRouter();
 
   const handleFile = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
@@ -22,8 +21,9 @@ export function UploadButton({ onUpload }: UploadButtonProps) {
     }
     setUploading(true);
     try {
-      const msg = await onUpload(file);
-      toast.success(msg);
+      const { rows } = await procesarCSV(file);
+      toast.success(`${rows} órdenes cargadas`);
+      router.refresh();
     } catch (err: any) {
       toast.error(`Error al subir: ${err?.message || String(err)}`);
     } finally {

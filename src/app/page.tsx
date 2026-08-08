@@ -1,13 +1,15 @@
-// ================================================================
-// page.tsx — Server Component (fetching + composición pura)
-// Patrón CentenoAdvisory: cero estado, cero hooks, solo composición
-// ================================================================
-import { generarAlertas, detectarAnomalias } from "@/lib/data-server";
+import { generarAlertas, detectarAnomalias, type MetodoProyeccion } from "@/lib/data-server";
 import { DashboardShell } from "@/components/organisms/DashboardShell";
 
-export default async function DashboardPage() {
-  const alertas = await generarAlertas();
+interface PageProps {
+  searchParams: Promise<{ metodo?: string }>;
+}
+
+export default async function DashboardPage({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const metodo = (params.metodo as MetodoProyeccion) || "mediana";
+  const alertas = await generarAlertas(metodo);
   const anomalas = detectarAnomalias(alertas);
 
-  return <DashboardShell alertas={alertas} anomalas={anomalas} />;
+  return <DashboardShell alertas={alertas} anomalas={anomalas} metodo={metodo} />;
 }
