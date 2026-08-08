@@ -44,7 +44,7 @@ export function DashboardHeader({ quiebres, sobrecompras, ok, sinDatos, total, f
                 onFiltrar(activo ? null : f.tipo);
               }}
               className={`text-left transition-all duration-200 ${
-                activo ? "ring-2 ring-accent scale-[1.02]" : ""
+                activo ? "ring-2 ring-accent" : ""
               }`}
             >
               <StatCard
