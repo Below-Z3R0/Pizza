@@ -4,7 +4,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2, Sparkles, Brain, ChevronDown, ChevronRight } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Sparkles, Brain, ChevronDown, ChevronRight, Pizza } from "lucide-react";
 import { Card } from "@/components/ui";
 import type { Alerta } from "@/lib/tipos";
 
@@ -85,10 +85,10 @@ export function ChatBox({ alertas }: ChatBoxProps) {
     <>
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 p-3.5 bg-accent hover:bg-accent-alt text-white rounded-full shadow-xl transition-all hover:scale-105"
+        className="fixed bottom-6 right-6 z-50 p-4 bg-accent hover:bg-accent-alt text-white rounded-full shadow-2xl transition-all hover:scale-110 hover:rotate-3"
         aria-label="Chat"
       >
-        {open ? <X className="size-5" /> : <MessageCircle className="size-5" />}
+        {open ? <X className="size-5" /> : <Pizza className="size-6" />}
       </button>
 
       {open && (

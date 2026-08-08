@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${cormorantGaramond.variable} ${outfit.variable}`} suppressHydrationWarning>
-      <body className="box-border flex flex-col mx-auto my-0 min-h-full font-sans antialiased text-main relative bg-transparent">
+      <body className="box-border flex flex-col mx-auto my-0 min-h-full font-sans antialiased text-main relative bg-page">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <Toaster richColors position="top-center" />

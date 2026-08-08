@@ -1,97 +1,87 @@
 @import "tailwindcss";
 
 @theme {
-  /* ===== FONDOS ===== */
   --color-page: var(--bg-page);
   --color-card: var(--bg-card);
   --color-surface: var(--bg-surface);
   --color-hover: var(--bg-hover);
 
-  /* ===== TEXTO ===== */
   --color-main: var(--text-main);
   --color-dim: var(--text-body);
   --color-muted: var(--text-muted);
 
-  /* ===== ACENTOS ===== */
   --color-accent: var(--accent);
   --color-accent-mid: var(--accent-mid);
   --color-accent-light: var(--accent-light);
   --color-accent-soft: var(--accent-soft);
   --color-accent-alt: var(--accent-alt);
 
-  /* ===== BORDES ===== */
   --color-border-subtle: var(--border-subtle);
   --color-border-mid: var(--border-mid);
   --color-border-glow: var(--border-glow);
 
-  /* ===== TIPOGRAFÍA ===== */
   --font-serif: var(--font-serif), Georgia, serif;
   --font-sans: var(--font-sans), Inter, Helvetica, Arial, sans-serif;
 }
 
 /* ================================================================
-   TEMA LIGHT — Limpio y moderno
+   TEMA LIGHT — Aurora Boreal (púrpura + cian)
    ================================================================ */
 .light {
   --bg-page: #FFFFFF;
-  --bg-card: #F8FAFC;
-  --bg-surface: #F1F5F9;
-  --bg-hover: #E2E8F0;
+  --bg-card: #FAFAFE;
+  --bg-surface: #F5F4FA;
+  --bg-hover: #ECEAF5;
 
-  --text-main: #0F172A;
-  --text-body: #475569;
-  --text-muted: #94A3B8;
+  --text-main: #1F1B2E;
+  --text-body: #574E6B;
+  --text-muted: #9C95AB;
 
-  --accent: #6366F1;
-  --accent-mid: #8B5CF6;
-  --accent-light: #A5B4FC;
-  --accent-soft: rgba(99, 102, 241, 0.08);
-  --accent-alt: #4F46E5;
+  /* Aurora suave: violeta apagado + cian complementario */
+  --accent: #7C5DBF;
+  --accent-mid: #9487D6;
+  --accent-light: #B8AEE0;
+  --accent-soft: rgba(124, 93, 191, 0.06);
+  --accent-alt: #5E48A0;
 
-  --border-subtle: #E2E8F0;
-  --border-mid: #CBD5E1;
-  --border-glow: rgba(99, 102, 241, 0.12);
+  --border-subtle: #F0EEF7;
+  --border-mid: #DDD9EB;
+  --border-glow: rgba(124, 93, 191, 0.12);
 
-  --bg-grid: rgba(15, 23, 42, 0.02);
-  --bg-blob-1: rgba(99, 102, 241, 0.06);
-  --bg-blob-2: rgba(139, 92, 246, 0.05);
-  --bg-blob-3: rgba(165, 180, 252, 0.04);
-  --bg-blob-4: rgba(79, 70, 229, 0.05);
+  --bg-grid: rgba(124, 93, 191, 0.02);
+  --bg-blob-1: rgba(124, 93, 191, 0.05);
+  --bg-blob-2: rgba(120, 180, 220, 0.04);
+  --bg-blob-3: rgba(184, 174, 224, 0.03);
+  --bg-blob-4: rgba(148, 135, 214, 0.04);
 }
 
-/* ================================================================
-   TEMA DARK — Profundo y sofisticado
-   ================================================================ */
 .dark {
-  --bg-page: #0F172A;
-  --bg-card: #1E293B;
-  --bg-surface: #334155;
-  --bg-hover: #475569;
+  --bg-page: #0E0B1A;
+  --bg-card: #1B1729;
+  --bg-surface: #2A2438;
+  --bg-hover: #3B324E;
 
-  --text-main: #F8FAFC;
-  --text-body: #94A3B8;
-  --text-muted: #64748B;
+  --text-main: #EBE8F5;
+  --text-body: #BFB8D0;
+  --text-muted: #857A9E;
 
-  --accent: #818CF8;
-  --accent-mid: #A78BFA;
-  --accent-light: #C4B5FD;
-  --accent-soft: rgba(129, 140, 248, 0.12);
-  --accent-alt: #6366F1;
+  --accent: #9F86E0;
+  --accent-mid: #B8AEE0;
+  --accent-light: #D0C7ED;
+  --accent-soft: rgba(159, 134, 224, 0.12);
+  --accent-alt: #7E64C8;
 
-  --border-subtle: #1E293B;
-  --border-mid: #334155;
-  --border-glow: rgba(129, 140, 248, 0.15);
+  --border-subtle: #2A2438;
+  --border-mid: #3B324E;
+  --border-glow: rgba(159, 134, 224, 0.16);
 
-  --bg-grid: rgba(248, 250, 252, 0.025);
-  --bg-blob-1: rgba(129, 140, 248, 0.1);
-  --bg-blob-2: rgba(167, 139, 250, 0.08);
-  --bg-blob-3: rgba(196, 181, 253, 0.06);
-  --bg-blob-4: rgba(99, 102, 241, 0.09);
+  --bg-grid: rgba(159, 134, 224, 0.025);
+  --bg-blob-1: rgba(159, 134, 224, 0.08);
+  --bg-blob-2: rgba(120, 180, 220, 0.05);
+  --bg-blob-3: rgba(184, 174, 224, 0.04);
+  --bg-blob-4: rgba(126, 100, 200, 0.06);
 }
 
-/* ================================================================
-   UTILIDADES
-   ================================================================ */
 .content-container {
   margin-inline: auto;
   padding-inline: calc(var(--spacing) * 6);
@@ -114,7 +104,6 @@ a {
   text-decoration: none;
 }
 
-/* Grid pattern decorativo */
 .bg-grid-pattern {
   background-image:
     linear-gradient(to right, var(--bg-grid) 1px, transparent 1px),
@@ -128,7 +117,6 @@ a {
   mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, #000 50%, transparent 100%);
 }
 
-/* Blobs animados */
 @keyframes blob-drift-1 {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(30px, -40px) scale(1.05); }

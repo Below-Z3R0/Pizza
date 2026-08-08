@@ -6,11 +6,15 @@ import type { ReactNode } from "react";
 interface CardProps {
   children: ReactNode;
   className?: string;
+  onClick?: () => void;
 }
 
-export function Card({ children, className = "" }: CardProps) {
+export function Card({ children, className = "", onClick }: CardProps) {
   return (
-    <div className={`bg-card border border-border-mid rounded-xl shadow-sm ${className}`}>
+    <div
+      onClick={onClick}
+      className={`bg-card border border-border-mid rounded-xl shadow-sm ${onClick ? "cursor-pointer" : ""} ${className}`}
+    >
       {children}
     </div>
   );

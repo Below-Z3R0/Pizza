@@ -28,7 +28,7 @@ const metodos: { id: MetodoProyeccion; label: string }[] = [
 
 export function DashboardShell({ metodo, cambiarMetodo, procesarUpload, totalItems, onOpenInfo }: DashboardShellProps) {
   return (
-    <section className="py-6 md:py-10 px-6 md:px-12 border-b border-border-subtle">
+    <section className="py-8 md:py-12 px-6 md:px-12 border-b border-border-subtle bg-card">
       <div className="max-w-7xl mx-auto relative">
         <div className="absolute top-0 right-0 z-10">
           <ThemeToggle />
