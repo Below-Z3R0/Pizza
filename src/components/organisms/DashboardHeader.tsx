@@ -1,5 +1,5 @@
 // ================================================================
-// DashboardHeader — KPIs como filtros clickeables (versión original)
+// DashboardHeader — KPIs como filtros clickeables
 // ================================================================
 "use client";
 
@@ -31,32 +31,23 @@ export function DashboardHeader({ quiebres, sobrecompras, ok, sinDatos, total, f
   return (
     <div className="space-y-2">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {filtros.map((f) => {
-          const activo = filtroActivo === f.tipo;
-          return (
-            <button
-              key={f.tipo}
-              onClick={() => {
-                if (f.tipo === "sin_datos") {
-                  onAbrirSinDatos();
-                  return;
-                }
-                onFiltrar(activo ? null : f.tipo);
-              }}
-              className={`text-left transition-all duration-200 ${
-                activo ? "ring-1 ring-border-mid" : ""
-              }`}
-            >
-              <StatCard
-                title={f.label}
-                value={valores[f.tipo]}
-                subtitle={f.tipo === "ok" ? `de ${total} items` : undefined}
-                icon={f.icon}
-                variant={f.variant}
-              />
-            </button>
-          );
-        })}
+        {filtros.map((f) => (
+          <StatCard
+            key={f.tipo}
+            title={f.label}
+            value={valores[f.tipo]}
+            subtitle={f.tipo === "ok" ? `de ${total} items` : undefined}
+            icon={f.icon}
+            variant={f.variant}
+            onClick={() => {
+              if (f.tipo === "sin_datos") {
+                onAbrirSinDatos();
+                return;
+              }
+              onFiltrar(filtroActivo === f.tipo ? null : f.tipo);
+            }}
+          />
+        ))}
       </div>
       {filtroActivo && (
         <div className="flex items-center gap-2">

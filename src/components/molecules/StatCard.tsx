@@ -1,5 +1,5 @@
 // ================================================================
-// StatCard — KPI con icono + texto (estado original)
+// StatCard — KPI clickeable con borde lateral semántico
 // ================================================================
 import type { LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui";
@@ -10,13 +10,14 @@ interface StatCardProps {
   subtitle?: string;
   icon?: LucideIcon;
   variant?: "default" | "danger" | "warning" | "success";
+  onClick?: () => void;
 }
 
 const borders: Record<string, string> = {
   default: "",
-  danger: "",
-  warning: "",
-  success: "",
+  danger: "border-l-red-400 dark:border-l-red-500",
+  warning: "border-l-amber-400 dark:border-l-amber-500",
+  success: "border-l-emerald-400 dark:border-l-emerald-500",
 };
 
 const textColors: Record<string, string> = {
@@ -26,9 +27,9 @@ const textColors: Record<string, string> = {
   success: "text-emerald-600 dark:text-emerald-400",
 };
 
-export function StatCard({ title, value, subtitle, icon: Icon, variant = "default" }: StatCardProps) {
+export function StatCard({ title, value, subtitle, icon: Icon, variant = "default", onClick }: StatCardProps) {
   return (
-    <Card className={`border-l-4 ${borders[variant]}`}>
+    <Card onClick={onClick} className={`border-l-4 ${borders[variant]} ${onClick ? "cursor-pointer" : ""}`}>
       <CardContent className="p-4">
         <div className="flex items-center justify-between">
           <div>
