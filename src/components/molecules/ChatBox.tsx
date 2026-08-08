@@ -1,11 +1,17 @@
 // ================================================================
-// ChatBox — Botón flotante + panel de chat con IA
+// ChatBox — Chat flotante con diseño de burbujas (shadcn style)
 // ================================================================
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2 } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Sparkles } from "lucide-react";
+import { Card } from "@/components/ui";
 import type { Alerta } from "@/lib/tipos";
+
+interface Mensaje {
+  rol: "user" | "assistant";
+  texto: string;
+}
 
 interface ChatBoxProps {
   alertas: Alerta[];
@@ -13,21 +19,29 @@ interface ChatBoxProps {
 
 export function ChatBox({ alertas }: ChatBoxProps) {
   const [open, setOpen] = useState(false);
-  const [pregunta, setPregunta] = useState("");
-  const [respuesta, setRespuesta] = useState("");
+  const [mensajes, setMensajes] = useState<Mensaje[]>([]);
+  const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (open) inputRef.current?.focus();
   }, [open]);
 
-  const preguntar = async () => {
-    if (!pregunta.trim()) return;
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [mensajes]);
+
+  const enviar = async () => {
+    const texto = input.trim();
+    if (!texto) return;
+
+    setMensajes((prev) => [...prev, { rol: "user", texto }]);
+    setInput("");
     setLoading(true);
     setError("");
-    setRespuesta("");
 
     const datos = alertas.map((a) => ({
       sucursal: a.sucursal,
@@ -44,13 +58,13 @@ export function ChatBox({ alertas }: ChatBoxProps) {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ pregunta, datos }),
+        body: JSON.stringify({ pregunta: texto, datos }),
       });
       const json = await res.json();
       if (json.error) {
         setError(json.error);
       } else {
-        setRespuesta(json.respuesta);
+        setMensajes((prev) => [...prev, { rol: "assistant", texto: json.respuesta }]);
       }
     } catch {
       setError("No se pudo conectar con el asistente.");
@@ -64,7 +78,7 @@ export function ChatBox({ alertas }: ChatBoxProps) {
       {/* Botón flotante */}
       <button
         onClick={() => setOpen(!open)}
-        className="fixed bottom-6 right-6 z-50 p-3 bg-accent hover:bg-accent-alt text-white rounded-full shadow-lg transition-all"
+        className="fixed bottom-6 right-6 z-50 p-3.5 bg-accent hover:bg-accent-alt text-white rounded-full shadow-xl transition-all hover:scale-105"
         aria-label="Chat"
       >
         {open ? <X className="size-5" /> : <MessageCircle className="size-5" />}
@@ -72,45 +86,81 @@ export function ChatBox({ alertas }: ChatBoxProps) {
 
       {/* Panel de chat */}
       {open && (
-        <div className="fixed bottom-20 right-6 z-50 w-80 max-h-96 bg-card border border-border-mid rounded-xl shadow-xl flex flex-col overflow-hidden">
-          <div className="p-3 border-b border-border-subtle bg-accent text-white text-sm font-semibold">
-            Asistente de Compras
+        <Card className="fixed bottom-20 right-6 z-50 w-[380px] h-[520px] flex flex-col shadow-2xl overflow-hidden">
+          {/* Header */}
+          <div className="shrink-0 px-4 py-3 border-b border-border-subtle bg-accent text-white flex items-center gap-2">
+            <Sparkles className="size-4" />
+            <span className="font-semibold text-sm">Asistente de Compras</span>
+            <span className="ml-auto text-[10px] opacity-70">MiniMax</span>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-3 space-y-2 text-sm">
-            {respuesta && (
-              <div className="bg-accent-soft text-main p-2 rounded-lg">{respuesta}</div>
-            )}
-            {error && (
-              <div className="bg-red-50 text-red-600 p-2 rounded-lg text-xs">{error}</div>
-            )}
-            {loading && (
-              <div className="flex items-center gap-2 text-muted text-xs">
-                <Loader2 className="size-3 animate-spin" /> Pensando...
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
+            {mensajes.length === 0 && !loading && (
+              <div className="text-center text-muted text-sm mt-8">
+                <MessageCircle className="size-8 mx-auto mb-2 opacity-30" />
+                <p>Preguntame sobre las órdenes de compra.</p>
+                <p className="text-xs mt-1">Ej: ¿qué sucursal está pidiendo de más?</p>
               </div>
             )}
+
+            {mensajes.map((m, i) => (
+              <div
+                key={i}
+                className={`flex ${m.rol === "user" ? "justify-end" : "justify-start"}`}
+              >
+                <div
+                  className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                    m.rol === "user"
+                      ? "bg-accent text-white rounded-br-md"
+                      : "bg-surface text-main rounded-bl-md border border-border-subtle"
+                  }`}
+                >
+                  {m.texto}
+                </div>
+              </div>
+            ))}
+
+            {loading && (
+              <div className="flex justify-start">
+                <div className="bg-surface text-main px-3.5 py-2.5 rounded-2xl rounded-bl-md border border-border-subtle flex items-center gap-2">
+                  <Loader2 className="size-3.5 animate-spin" />
+                  <span className="text-xs text-muted">Analizando datos...</span>
+                </div>
+              </div>
+            )}
+
+            {error && (
+              <div className="text-center text-red-500 text-xs bg-red-50 dark:bg-red-950/30 px-3 py-2 rounded-lg">
+                {error}
+              </div>
+            )}
+
+            <div ref={bottomRef} />
           </div>
 
+          {/* Input */}
           <form
-            onSubmit={(e) => { e.preventDefault(); preguntar(); }}
-            className="p-2 border-t border-border-subtle flex gap-2"
+            onSubmit={(e) => { e.preventDefault(); enviar(); }}
+            className="shrink-0 px-3 py-2.5 border-t border-border-subtle flex gap-2"
           >
             <input
               ref={inputRef}
-              value={pregunta}
-              onChange={(e) => setPregunta(e.target.value)}
-              placeholder="Ej: ¿qué sucursal pide demasiado queso?"
-              className="flex-1 text-xs px-2 py-1.5 rounded-md border border-border-mid bg-transparent outline-none focus:border-accent"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              placeholder="Preguntá sobre las órdenes..."
+              className="flex-1 text-sm px-3 py-2 rounded-xl border border-border-mid bg-transparent placeholder:text-muted outline-none focus:border-accent transition-colors"
+              disabled={loading}
             />
             <button
               type="submit"
-              disabled={loading || !pregunta.trim()}
-              className="p-1.5 rounded-md bg-accent text-white disabled:opacity-50"
+              disabled={loading || !input.trim()}
+              className="shrink-0 p-2.5 rounded-xl bg-accent text-white disabled:opacity-40 hover:bg-accent-alt transition-colors"
             >
-              <Send className="size-3.5" />
+              <Send className="size-4" />
             </button>
           </form>
-        </div>
+        </Card>
       )}
     </>
   );
