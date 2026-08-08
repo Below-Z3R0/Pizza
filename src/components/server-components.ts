@@ -9,10 +9,9 @@ export * from "./atoms/Title2";
 export * from "./atoms/Paragraph";
 export * from "./atoms/Span";
 export * from "./atoms/MiniTitle";
-export * from "./atoms/Background";
 
 // --- ui (shadcn curado) ---
-export * from "./ui";
+export * from "./ui-components";
 
 // --- animations ---
 export { FadeUp, MiniTitleAnimation, staggerContainer } from "./animations/Animations";

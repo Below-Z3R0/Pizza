@@ -14,9 +14,9 @@ import {
   type ColumnDef,
   flexRender,
 } from "@tanstack/react-table";
-import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui";
-import { Badge } from "@/components/ui";
-import { Input } from "@/components/ui";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui-components";
+import { Badge } from "@/components/ui-components";
+import { Input } from "@/components/ui-components";
 import type { Alerta } from "@/lib/tipos";
 
 const columnHelper = createColumnHelper<Alerta>();

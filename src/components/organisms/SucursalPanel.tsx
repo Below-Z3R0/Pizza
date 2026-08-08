@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import { Tabs } from "@/components/ui";
+import { Tabs } from "@/components/ui-components";
 import { AlertCard } from "@/components/molecules/AlertCard";
 import { IngredientesTable } from "@/components/molecules/IngredientesTable";
 import { OrdenChart } from "@/components/molecules/OrdenChart";

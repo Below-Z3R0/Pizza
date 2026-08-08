@@ -5,9 +5,9 @@
 
 import dynamic from "next/dynamic";
 import { useState, useEffect } from "react";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui";
-import { Badge } from "@/components/ui";
-import { Tabs } from "@/components/ui";
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui-components";
+import { Badge } from "@/components/ui-components";
+import { Tabs } from "@/components/ui-components";
 import { getTendencias, formatearParaGrafico, type TendenciaSucursal } from "@/services/tendencias.service";
 
 const TrendLineChart = dynamic(

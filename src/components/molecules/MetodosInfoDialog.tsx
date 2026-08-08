@@ -2,7 +2,7 @@
 // MetodosInfoDialog — Diálogo explicativo de métodos de proyección
 // ================================================================
 import { HelpCircle } from "lucide-react";
-import { Dialog } from "@/components/ui";
+import { Dialog } from "@/components/ui-components";
 
 interface MetodosInfoDialogProps {
   open: boolean;

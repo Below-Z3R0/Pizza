@@ -1,7 +1,7 @@
 "use client";
 
 import { Settings2 } from "lucide-react";
-import { Tabs } from "@/components/ui";
+import { Tabs } from "@/components/ui-components";
 import { useRouter } from "next/navigation";
 import type { MetodoProyeccion } from "@/lib/data";
 

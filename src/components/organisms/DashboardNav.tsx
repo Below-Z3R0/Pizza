@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { Badge } from "@/components/ui";
+import { Badge } from "@/components/ui-components";
 import { AnomaliasSection } from "@/components/molecules/AnomaliasSection";
 import { ProveedoresList } from "@/components/molecules/ProveedoresList";
 import { ComparativaSemanal } from "@/components/molecules/ComparativaSemanal";

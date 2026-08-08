@@ -4,7 +4,7 @@
 "use client";
 
 import { AlertCircle, RefreshCcw, Home } from "lucide-react";
-import { Card, CardContent } from "@/components/ui";
+import { Card, CardContent } from "@/components/ui-components";
 import { Title1, Paragraph } from "@/components/server-components";
 
 interface ErrorPageProps {

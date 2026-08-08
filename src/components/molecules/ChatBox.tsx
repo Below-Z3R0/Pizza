@@ -5,7 +5,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import { MessageCircle, X, Send, Loader2, Sparkles, Brain, ChevronDown, ChevronRight, Pizza } from "lucide-react";
-import { Card } from "@/components/ui";
+import { Card } from "@/components/ui-components";
 import type { Alerta } from "@/lib/tipos";
 
 interface Mensaje {

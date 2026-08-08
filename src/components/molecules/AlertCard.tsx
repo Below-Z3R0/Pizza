@@ -2,8 +2,8 @@
 // AlertCard — Una alerta individual renderizada como card
 // ================================================================
 import { AlertCircle, AlertTriangle, CheckCircle2, HelpCircle } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui";
-import { Badge } from "@/components/ui";
+import { Alert, AlertDescription } from "@/components/ui-components";
+import { Badge } from "@/components/ui-components";
 import { Span } from "@/components/server-components";
 import type { Alerta } from "@/lib/tipos";
 

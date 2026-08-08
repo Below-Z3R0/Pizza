@@ -4,8 +4,8 @@
 "use client";
 
 import { Download, Trash2, X } from "lucide-react";
-import { Dialog } from "@/components/ui";
-import { Badge } from "@/components/ui";
+import { Dialog } from "@/components/ui-components";
+import { Badge } from "@/components/ui-components";
 import type { Alerta } from "@/lib/tipos";
 
 interface ArchivosProblematicosModalProps {

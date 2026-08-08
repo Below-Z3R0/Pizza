@@ -1,7 +1,7 @@
 import { generarAlertas, detectarAnomalias, type MetodoProyeccion } from "@/lib/data-server";
 import { MiniTitle, Title1, Paragraph } from "@/components/server-components";
 import { FadeUp } from "@/components/animations/Animations";
-import { ThemeToggleWrapper } from "@/components/atoms/ThemeToggleWrapper";
+import { ThemeToggleWrapper } from "@/components/client-components";
 import { MethodSelector } from "@/components/molecules/MethodSelector";
 import { UploadButton } from "@/components/molecules/UploadButton";
 import { InfoButton } from "@/components/molecules/InfoButton";

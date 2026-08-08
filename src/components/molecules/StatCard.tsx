@@ -2,7 +2,7 @@
 // StatCard — KPI clickeable con borde lateral semántico
 // ================================================================
 import type { LucideIcon } from "lucide-react";
-import { Card, CardContent } from "@/components/ui";
+import { Card, CardContent } from "@/components/ui-components";
 
 interface StatCardProps {
   title: string;
