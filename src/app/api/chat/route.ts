@@ -4,7 +4,11 @@
 // ================================================================
 import { NextResponse } from "next/server";
 
-const AI_URL = "https://api.minimax.chat/v1/chat/completions";
+const AI_URL = process.env.MINIMAX_BASE_URL
+  ? `${process.env.MINIMAX_BASE_URL}/chat/completions`
+  : "https://api.minimax.io/v1/chat/completions";
+
+const apiKey = process.env.MINIMAX_API_KEY || process.env.DEEPSEEK_API_KEY;
 
 interface AlertaResumen {
   sucursal: string;
@@ -27,7 +31,6 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "La pregunta no puede estar vacía" }, { status: 400 });
   }
 
-  const apiKey = process.env.DEEPSEEK_API_KEY;
   if (!apiKey) {
     return NextResponse.json({ error: "API key no configurada en el servidor" }, { status: 500 });
   }
@@ -52,9 +55,10 @@ ${contexto}`;
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
+        "x-api-key": apiKey,
       },
       body: JSON.stringify({
-        model: "abab6.5s-chat",
+        model: "MiniMax-M3",
         messages: [
           { role: "system", content: systemPrompt },
           { role: "user", content: pregunta },
@@ -70,9 +74,14 @@ ${contexto}`;
     }
 
     const json = await res.json();
-    return NextResponse.json({
-      respuesta: json.choices?.[0]?.message?.content ?? "No pude generar una respuesta.",
-    });
+    const raw = json.choices?.[0]?.message?.content ?? "";
+
+    // Separar razonamiento (</think>) de la respuesta final
+    const thinkMatch = raw.match(/<think>([\s\S]*?)<\/think>/);
+    const razonamiento = thinkMatch?.[1]?.trim() ?? "";
+    const respuesta = raw.replace(/<think>[\s\S]*?<\/think>/, "").trim() || "No pude generar una respuesta.";
+
+    return NextResponse.json({ respuesta, razonamiento });
   } catch (e) {
     return NextResponse.json(
       { error: `Error al conectar con MiniMax: ${e instanceof Error ? e.message : "Desconocido"}` },

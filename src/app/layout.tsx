@@ -19,7 +19,7 @@ export const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Barrio Pizza — Dashboard de Compras",
+  title: "Below z3r0 Pizza",
   description: "Dashboard inteligente para revisar órdenes de compra de insumos.",
 };
 

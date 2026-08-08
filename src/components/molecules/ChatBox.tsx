@@ -1,16 +1,17 @@
 // ================================================================
-// ChatBox — Chat flotante con diseño de burbujas (shadcn style)
+// ChatBox — Chat flotante con burbujas + razonamiento colapsable
 // ================================================================
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Loader2, Sparkles } from "lucide-react";
+import { MessageCircle, X, Send, Loader2, Sparkles, Brain, ChevronDown, ChevronRight } from "lucide-react";
 import { Card } from "@/components/ui";
 import type { Alerta } from "@/lib/tipos";
 
 interface Mensaje {
   rol: "user" | "assistant";
   texto: string;
+  razonamiento?: string;
 }
 
 interface ChatBoxProps {
@@ -25,14 +26,10 @@ export function ChatBox({ alertas }: ChatBoxProps) {
   const [error, setError] = useState("");
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const [razonamientoAbierto, setRazonamientoAbierto] = useState<Record<number, boolean>>({});
 
-  useEffect(() => {
-    if (open) inputRef.current?.focus();
-  }, [open]);
-
-  useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [mensajes]);
+  useEffect(() => { if (open) inputRef.current?.focus(); }, [open]);
+  useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: "smooth" }); }, [mensajes]);
 
   const enviar = async () => {
     const texto = input.trim();
@@ -64,7 +61,14 @@ export function ChatBox({ alertas }: ChatBoxProps) {
       if (json.error) {
         setError(json.error);
       } else {
-        setMensajes((prev) => [...prev, { rol: "assistant", texto: json.respuesta }]);
+        setMensajes((prev) => [
+          ...prev,
+          {
+            rol: "assistant",
+            texto: json.respuesta,
+            razonamiento: json.razonamiento || undefined,
+          },
+        ]);
       }
     } catch {
       setError("No se pudo conectar con el asistente.");
@@ -73,9 +77,12 @@ export function ChatBox({ alertas }: ChatBoxProps) {
     }
   };
 
+  const toggleRazonamiento = (i: number) => {
+    setRazonamientoAbierto((prev) => ({ ...prev, [i]: !prev[i] }));
+  };
+
   return (
     <>
-      {/* Botón flotante */}
       <button
         onClick={() => setOpen(!open)}
         className="fixed bottom-6 right-6 z-50 p-3.5 bg-accent hover:bg-accent-alt text-white rounded-full shadow-xl transition-all hover:scale-105"
@@ -84,17 +91,14 @@ export function ChatBox({ alertas }: ChatBoxProps) {
         {open ? <X className="size-5" /> : <MessageCircle className="size-5" />}
       </button>
 
-      {/* Panel de chat */}
       {open && (
-        <Card className="fixed bottom-20 right-6 z-50 w-[380px] h-[520px] flex flex-col shadow-2xl overflow-hidden">
-          {/* Header */}
+        <Card className="fixed bottom-20 right-6 z-50 w-[400px] h-[540px] flex flex-col shadow-2xl overflow-hidden">
           <div className="shrink-0 px-4 py-3 border-b border-border-subtle bg-accent text-white flex items-center gap-2">
             <Sparkles className="size-4" />
             <span className="font-semibold text-sm">Asistente de Compras</span>
             <span className="ml-auto text-[10px] opacity-70">MiniMax</span>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto px-4 py-3 space-y-3">
             {mensajes.length === 0 && !loading && (
               <div className="text-center text-muted text-sm mt-8">
@@ -105,18 +109,39 @@ export function ChatBox({ alertas }: ChatBoxProps) {
             )}
 
             {mensajes.map((m, i) => (
-              <div
-                key={i}
-                className={`flex ${m.rol === "user" ? "justify-end" : "justify-start"}`}
-              >
-                <div
-                  className={`max-w-[85%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
-                    m.rol === "user"
-                      ? "bg-accent text-white rounded-br-md"
-                      : "bg-surface text-main rounded-bl-md border border-border-subtle"
-                  }`}
-                >
-                  {m.texto}
+              <div key={i} className={`flex ${m.rol === "user" ? "justify-end" : "justify-start"}`}>
+                <div className="max-w-[90%] space-y-1.5">
+                  {/* Razonamiento colapsable (solo assistant) */}
+                  {m.razonamiento && (
+                    <button
+                      onClick={() => toggleRazonamiento(i)}
+                      className="flex items-center gap-1.5 text-[11px] text-muted hover:text-accent transition-colors w-full"
+                    >
+                      {razonamientoAbierto[i] ? (
+                        <ChevronDown className="size-3" />
+                      ) : (
+                        <ChevronRight className="size-3" />
+                      )}
+                      <Brain className="size-3" />
+                      Razonamiento
+                    </button>
+                  )}
+                  {m.razonamiento && razonamientoAbierto[i] && (
+                    <div className="bg-surface/50 border border-border-subtle rounded-lg px-3 py-2 text-[11px] text-muted leading-relaxed whitespace-pre-wrap">
+                      {m.razonamiento}
+                    </div>
+                  )}
+
+                  {/* Mensaje principal */}
+                  <div
+                    className={`px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                      m.rol === "user"
+                        ? "bg-accent text-white rounded-br-md ml-auto"
+                        : "bg-surface text-main rounded-bl-md border border-border-subtle"
+                    }`}
+                  >
+                    {m.texto}
+                  </div>
                 </div>
               </div>
             ))}
@@ -139,7 +164,6 @@ export function ChatBox({ alertas }: ChatBoxProps) {
             <div ref={bottomRef} />
           </div>
 
-          {/* Input */}
           <form
             onSubmit={(e) => { e.preventDefault(); enviar(); }}
             className="shrink-0 px-3 py-2.5 border-t border-border-subtle flex gap-2"
