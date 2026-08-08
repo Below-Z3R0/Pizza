@@ -21,7 +21,8 @@ interface SucursalPanelProps {
   filtradas: Alerta[];
 }
 
-export function SucursalPanel({ sucursales, activa, onChange, criticas, filtradas }: SucursalPanelProps) {
+export function 
+SucursalPanel({ sucursales, activa, onChange, criticas, filtradas }: SucursalPanelProps) {
   const items = [{ id: "Todas", label: "Todas" }, ...sucursales.map((s) => ({ id: s, label: s }))];
   const [mostrarAlertas, setMostrarAlertas] = useState(false);
 
