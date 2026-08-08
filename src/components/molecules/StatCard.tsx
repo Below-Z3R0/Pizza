@@ -14,9 +14,9 @@ interface StatCardProps {
 
 const borders: Record<string, string> = {
   default: "",
-  danger: "border-l-red-400 dark:border-l-red-500",
-  warning: "border-l-amber-400 dark:border-l-amber-500",
-  success: "border-l-emerald-400 dark:border-l-emerald-500",
+  danger: "",
+  warning: "",
+  success: "",
 };
 
 const textColors: Record<string, string> = {
