@@ -13,7 +13,7 @@ export function ThemeToggle() {
   }, []);
 
   if (!mounted) {
-    return <div className="size-10" aria-hidden="true" />;
+    return <div className="size-9" aria-hidden="true" />;
   }
 
   return (
@@ -22,7 +22,7 @@ export function ThemeToggle() {
       aria-label="Cambiar tema"
       className="p-2 text-body hover:text-main hover:bg-hover rounded-md transition-all duration-200 border border-border-subtle"
     >
-      {theme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
+      {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
     </button>
   );
 }

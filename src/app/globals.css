@@ -30,33 +30,33 @@
 }
 
 /* ================================================================
-   TEMA LIGHT — Tonos cálidos y suaves
+   TEMA LIGHT — Limpio y moderno
    ================================================================ */
 .light {
-  --bg-page: #FAF8F5;
-  --bg-card: #FFFFFE;
-  --bg-surface: #F3EFE8;
-  --bg-hover: #EDE7DC;
+  --bg-page: #FFFFFF;
+  --bg-card: #F8FAFC;
+  --bg-surface: #F1F5F9;
+  --bg-hover: #E2E8F0;
 
-  --text-main: #2A2520;
-  --text-body: #5A5249;
-  --text-muted: #9A8E80;
+  --text-main: #0F172A;
+  --text-body: #475569;
+  --text-muted: #94A3B8;
 
-  --accent: #5B5BD6;
-  --accent-mid: #7C3AED;
-  --accent-light: #A78BFA;
-  --accent-soft: rgba(91, 91, 214, 0.08);
+  --accent: #6366F1;
+  --accent-mid: #8B5CF6;
+  --accent-light: #A5B4FC;
+  --accent-soft: rgba(99, 102, 241, 0.08);
   --accent-alt: #4F46E5;
 
-  --border-subtle: #EFE9DD;
-  --border-mid: #E5DDD0;
-  --border-glow: rgba(91, 91, 214, 0.15);
+  --border-subtle: #E2E8F0;
+  --border-mid: #CBD5E1;
+  --border-glow: rgba(99, 102, 241, 0.12);
 
-  --bg-grid: rgba(42, 37, 32, 0.025);
-  --bg-blob-1: rgba(91, 91, 214, 0.08);
-  --bg-blob-2: rgba(124, 58, 237, 0.06);
-  --bg-blob-3: rgba(167, 139, 250, 0.05);
-  --bg-blob-4: rgba(79, 70, 229, 0.07);
+  --bg-grid: rgba(15, 23, 42, 0.02);
+  --bg-blob-1: rgba(99, 102, 241, 0.06);
+  --bg-blob-2: rgba(139, 92, 246, 0.05);
+  --bg-blob-3: rgba(165, 180, 252, 0.04);
+  --bg-blob-4: rgba(79, 70, 229, 0.05);
 }
 
 /* ================================================================

@@ -2,12 +2,8 @@ import type { Metadata } from "next";
 import { Outfit, Cormorant_Garamond } from "next/font/google";
 import { Toaster } from "sonner";
 import "./globals.css";
-import { Background } from "@/components/Background";
 import { ThemeProvider } from "@/hooks/themeProvider";
 
-/* ================================================================
-   FUENTES
-   ================================================================ */
 export const outfit = Outfit({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -22,36 +18,16 @@ export const cormorantGaramond = Cormorant_Garamond({
   fallback: ["Georgia", "Times New Roman", "serif"],
 });
 
-/* ================================================================
-   METADATA — Personalizar por proyecto
-   ================================================================ */
 export const metadata: Metadata = {
-  title: "Next.js Template",
-  description: "Next.js template with Atomic Design, Supabase, i18n, auth.",
+  title: "Barrio Pizza — Dashboard de Compras",
+  description: "Dashboard inteligente para revisar órdenes de compra de insumos.",
 };
 
-/* ================================================================
-   ROOT LAYOUT
-   ================================================================ */
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html
-      lang="es"
-      className={`${cormorantGaramond.variable} ${outfit.variable}`}
-      suppressHydrationWarning
-    >
+    <html lang="es" className={`${cormorantGaramond.variable} ${outfit.variable}`} suppressHydrationWarning>
       <body className="box-border flex flex-col mx-auto my-0 min-h-full font-sans antialiased text-main relative bg-transparent">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Background />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
           <Toaster richColors position="top-center" />
         </ThemeProvider>

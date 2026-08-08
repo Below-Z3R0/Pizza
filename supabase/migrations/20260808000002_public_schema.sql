@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS public.ingredientes (id TEXT PRIMARY KEY, nombre TEXT NOT NULL, proveedor TEXT NOT NULL, unidad_base TEXT NOT NULL, formato_compra TEXT NOT NULL, unidad_base_por_formato NUMERIC NOT NULL, es_perecedero BOOLEAN NOT NULL DEFAULT false);
+CREATE TABLE IF NOT EXISTS public.sucursales (id SERIAL PRIMARY KEY, nombre TEXT UNIQUE NOT NULL);
+CREATE TABLE IF NOT EXISTS public.inventario (id SERIAL PRIMARY KEY, sucursal TEXT NOT NULL, ingrediente_id TEXT NOT NULL, stock_actual_unidad_base NUMERIC NOT NULL DEFAULT 0, UNIQUE(sucursal, ingrediente_id));
+CREATE TABLE IF NOT EXISTS public.consumo_historico (id SERIAL PRIMARY KEY, sucursal TEXT NOT NULL, ingrediente_id TEXT NOT NULL, semana TEXT NOT NULL, consumo_unidad_base NUMERIC NOT NULL, UNIQUE(sucursal, ingrediente_id, semana));
+CREATE TABLE IF NOT EXISTS public.ordenes (id SERIAL PRIMARY KEY, sucursal TEXT NOT NULL, ingrediente_id TEXT NOT NULL, cantidad_formatos INTEGER NOT NULL DEFAULT 0, UNIQUE(sucursal, ingrediente_id));
