@@ -1,5 +1,6 @@
 // ================================================================
-// IngredientesTable — Tabla de alertas con TanStack Table v9 + shadcn
+// IngredientesTable — Tabla de alertas con TanStack Table v8
+// Cuando hay múltiples sucursales, muestra una tabla por sucursal
 // ================================================================
 "use client";
 
@@ -11,7 +12,6 @@ import {
   getSortedRowModel,
   getFilteredRowModel,
   type SortingState,
-  type ColumnDef,
   flexRender,
 } from "@tanstack/react-table";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui-components";
@@ -21,9 +21,8 @@ import type { Alerta } from "@/lib/tipos";
 
 const columnHelper = createColumnHelper<Alerta>();
 
-export function IngredientesTable({ alertas }: { alertas: Alerta[] }) {
+function TablaSucursal({ alertas, sucursal }: { alertas: Alerta[]; sucursal: string }) {
   const [sorting, setSorting] = useState<SortingState>([]);
-  const [globalFilter, setGlobalFilter] = useState("");
 
   const columns = useMemo(() => [
     columnHelper.accessor("nombre", { header: "Ingrediente" }),
@@ -64,22 +63,17 @@ export function IngredientesTable({ alertas }: { alertas: Alerta[] }) {
   const table = useReactTable({
     data: alertas,
     columns,
-    state: { sorting, globalFilter },
+    state: { sorting },
     onSortingChange: setSorting,
-    onGlobalFilterChange: setGlobalFilter,
     getCoreRowModel: getCoreRowModel(),
     getSortedRowModel: getSortedRowModel(),
-    getFilteredRowModel: getFilteredRowModel(),
   });
 
+  if (alertas.length === 0) return null;
+
   return (
-    <div className="space-y-3">
-      <Input
-        placeholder="Filtrar por ingrediente o proveedor..."
-        value={globalFilter}
-        onChange={(e) => setGlobalFilter(e.target.value)}
-        className="max-w-sm"
-      />
+    <div>
+      <h3 className="text-sm font-semibold text-main mb-2 px-1">{sucursal} ({alertas.length})</h3>
       <Table>
         <TableHeader>
           {table.getHeaderGroups().map((hg) => (
@@ -101,15 +95,44 @@ export function IngredientesTable({ alertas }: { alertas: Alerta[] }) {
               ))}
             </TableRow>
           ))}
-          {table.getRowModel().rows.length === 0 && (
-            <TableRow>
-              <TableCell colSpan={columns.length} className="text-center text-muted py-8">
-                Sin resultados
-              </TableCell>
-            </TableRow>
-          )}
         </TableBody>
       </Table>
+    </div>
+  );
+}
+
+export function IngredientesTable({ alertas }: { alertas: Alerta[] }) {
+  const [globalFilter, setGlobalFilter] = useState("");
+
+  const sucursales = [...new Set(alertas.map((a) => a.sucursal))];
+
+  const filtrar = (lista: Alerta[]) => {
+    if (!globalFilter) return lista;
+    const q = globalFilter.toLowerCase();
+    return lista.filter((a) =>
+      a.nombre.toLowerCase().includes(q) || a.proveedor.toLowerCase().includes(q)
+    );
+  };
+
+  if (sucursales.length <= 1) {
+    const data = filtrar(alertas);
+    return (
+      <div className="space-y-3">
+        <Input placeholder="Filtrar..." value={globalFilter} onChange={(e) => setGlobalFilter(e.target.value)} className="max-w-sm" />
+        <TablaSucursal alertas={data} sucursal={sucursales[0] ?? ""} />
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      <Input placeholder="Filtrar..." value={globalFilter} onChange={(e) => setGlobalFilter(e.target.value)} className="max-w-sm" />
+      <div className="space-y-6">
+        {sucursales.map((suc) => {
+          const data = filtrar(alertas.filter((a) => a.sucursal === suc));
+          return <TablaSucursal key={suc} alertas={data} sucursal={suc} />;
+        })}
+      </div>
     </div>
   );
 }
