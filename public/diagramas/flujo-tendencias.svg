@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-30 -30 410 615" width="410" height="615">
+<rect x="-30" y="-30" width="410" height="615" fill="#ffffff"/>
+<text x="100" y="44" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO: Tendencias S1-S6</text>
+<rect x="100" y="80" width="250" height="50" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="63.0" y="14.5" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Badge 'Tendencias'</text>
+<rect x="100" y="165" width="250" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="98.0" y="14.5" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ComparativaSemanal
+useEffect</text>
+<rect x="100" y="250" width="250" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="115.5" y="14.5" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">tendencias.service.ts
+Promise.all</text>
+<rect x="100" y="335" width="250" height="50" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="143.5" y="14.5" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">consumo_historico (528)
+ingredientes (22)</text>
+<rect x="100" y="420" width="250" height="50" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="98.0" y="14.5" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Agrupar: sucursal→semana→ing</text>
+<rect x="100" y="505" width="250" height="50" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="119.0" y="14.5" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Recharts LineChart
+6 líneas, S1-S6</text>
+<defs><marker id="a-030351223dfe4c18a52a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="225" y1="130" x2="225" y2="165" stroke="#868e96" stroke-width="2" marker-end="url(#a-030351223dfe4c18a52a)"/>
+<defs><marker id="a-8a1b6178bfda493bafc3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="225" y1="215" x2="225" y2="250" stroke="#868e96" stroke-width="2" marker-end="url(#a-8a1b6178bfda493bafc3)"/>
+<defs><marker id="a-3a6e45919adb4302a8b3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="225" y1="300" x2="225" y2="335" stroke="#868e96" stroke-width="2" marker-end="url(#a-3a6e45919adb4302a8b3)"/>
+<defs><marker id="a-d190e965a933407ebeef" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="225" y1="385" x2="225" y2="420" stroke="#868e96" stroke-width="2" marker-end="url(#a-d190e965a933407ebeef)"/>
+<defs><marker id="a-d30d0940d1a44258a71c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="225" y1="470" x2="225" y2="505" stroke="#868e96" stroke-width="2" marker-end="url(#a-d30d0940d1a44258a71c)"/>
+</svg>

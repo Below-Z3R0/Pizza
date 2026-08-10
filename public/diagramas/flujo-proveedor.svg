@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -10 654.958984375 340" width="654" height="340">
+<rect x="20" y="-10" width="654.958984375" height="340" fill="#ffffff"/>
+<text x="100" y="44" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO: Agrupación por Proveedor</text>
+<rect x="464.958984375" y="112.94921875000001" width="180" height="157" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="554.958984375" y="195.07421875" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Molinos Central (8 items)
+
+Bella Italia (12 items)
+
+Importadora Istmo (2
+items)
+
+Verduras La Huerta (5
+items)</text>
+<rect x="50" y="80" width="250" height="50" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="175.0" y="97.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Badge 'Por proveedor'</text>
+<rect x="50" y="165" width="250" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="175.0" y="190.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">agruparPorProveedor
+Record&lt;string, Alerta[]&gt;</text>
+<rect x="50" y="250" width="250" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="175.0" y="275.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ProveedoresList
+cards por proveedor</text>
+<defs><marker id="a-f2a292cb924340c391e8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="175" y1="130" x2="175" y2="165" stroke="#868e96" stroke-width="2" marker-end="url(#a-f2a292cb924340c391e8)"/>
+<defs><marker id="a-3c1c42a9d8db489892db" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="175" y1="215" x2="175" y2="250" stroke="#868e96" stroke-width="2" marker-end="url(#a-3c1c42a9d8db489892db)"/>
+<defs><marker id="a-12bee50a61de4dba9d80" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#e8590c"/></marker></defs>
+<line x1="306" y1="108.14977877313254" x2="458.958984375" y2="188.32013997686747" stroke="#e8590c" stroke-width="2" marker-end="url(#a-12bee50a61de4dba9d80)"/>
+<rect x="398.666015625" y="133.890625" width="180" height="40" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="488.666015625" y="151.015625" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Bella Italia (12 items)</text>
+<rect x="400" y="192.78515625" width="180" height="43" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="490.0" y="218.03515625" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Importadora Istmo (2
+items)</text>
+<rect x="400" y="245.447265625" width="180" height="43" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="490.0" y="270.697265625" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Verduras La Huerta (5
+items)</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 -10 660 650" width="660" height="650">
+<rect x="20" y="-10" width="660" height="650" fill="#ffffff"/>
+<text x="50" y="44" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">ESQUEMA DE BASE DE DATOS — Barrio Pizza</text>
+<rect x="50" y="70" width="600" height="30" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="350.0" y="87.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Schema: public (Supabase) | RLS: DESACTIVADO</text>
+<rect x="50" y="121.71026177218235" width="250" height="39.605863440142045" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="175.0" y="138.83526177218235" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ingredientes (22)</text>
+<rect x="320" y="120" width="250" height="37.41781751295652" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="445.0" y="137.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">sucursales (4)</text>
+<rect x="50" y="300" width="250" height="150" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="175.0" y="317.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">consumo_historico (528)</text>
+<rect x="320" y="300" width="250" height="130" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="445.0" y="317.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">inventario (88)</text>
+<rect x="50" y="480" width="250" height="130" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="175.0" y="497.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ordenes (89)</text>
+<rect x="380" y="480" width="230" height="65" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="495.0" y="505.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Server: createServerClient
+data-server.ts → page.tsx</text>
+<rect x="380" y="560" width="230" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="495.0" y="585.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Browser: createBrowserClient
+upload.service.ts</text>
+</svg>

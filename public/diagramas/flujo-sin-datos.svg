@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="33.2655251054249 -5.646251914067577 356.0 590.6462519140675" width="356" height="590">
+<rect x="33.2655251054249" y="-5.646251914067577" width="356.0" height="590.6462519140675" fill="#ffffff"/>
+<text x="63.2655251054249" y="48.35374808593242" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO: Modal 'Sin datos'</text>
+<rect x="100" y="80" width="220" height="50" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="210.0" y="97.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">KPI 'Sin datos' click</text>
+<rect x="100" y="165" width="220" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="210.0" y="190.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">DashboardHeader
+sinDatosList</text>
+<rect x="100" y="250" width="220" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="210.0" y="275.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ArchivosProblematicos
+Modal</text>
+<rect x="100" y="335" width="220" height="50" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="210.0" y="360.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">[Descargar CSV]
+genera desde memoria</text>
+<rect x="100" y="420" width="220" height="50" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="210.0" y="445.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">[Eliminar]
+DELETE FROM ordenes</text>
+<rect x="100" y="505" width="220" height="50" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="210.0" y="530.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">router.refresh()
+Sin datos desaparecen</text>
+<defs><marker id="a-bf427ae8bf8f4f2f968b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="130" x2="210" y2="165" stroke="#868e96" stroke-width="2" marker-end="url(#a-bf427ae8bf8f4f2f968b)"/>
+<defs><marker id="a-b378563be2c648c48a60" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="215" x2="210" y2="250" stroke="#868e96" stroke-width="2" marker-end="url(#a-b378563be2c648c48a60)"/>
+<defs><marker id="a-6c4ed0d2240142b2a696" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="300" x2="210" y2="335" stroke="#868e96" stroke-width="2" marker-end="url(#a-6c4ed0d2240142b2a696)"/>
+<defs><marker id="a-8b5b0cac8c13464f9281" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="385" x2="210" y2="420" stroke="#868e96" stroke-width="2" marker-end="url(#a-8b5b0cac8c13464f9281)"/>
+<defs><marker id="a-ea120d31a26647a9ac15" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="470" x2="210" y2="505" stroke="#868e96" stroke-width="2" marker-end="url(#a-ea120d31a26647a9ac15)"/>
+</svg>

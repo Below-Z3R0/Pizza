@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-43.4871330796135 -3.418157721091653 458.0 768.4181577210917" width="458" height="768">
+<rect x="-43.4871330796135" y="-3.418157721091653" width="458.0" height="768.4181577210917" fill="#ffffff"/>
+<text x="-13.4871330796135" y="50.58184227890835" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO DE UPLOAD — CSV → BD</text>
+<rect x="100" y="80" width="200" height="55" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="200.0" y="97.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Usuario sube CSV</text>
+<rect x="100" y="180" width="200" height="55" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="200.0" y="205.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">UploadButton.tsx
+validación .csv</text>
+<rect x="100" y="280" width="200" height="55" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="200.0" y="305.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">upload.service.ts
+PapaParse</text>
+<rect x="100" y="380" width="200" height="55" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="200.0" y="405.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ordenes.data.service.ts
+DELETE + INSERT</text>
+<rect x="100" y="480" width="200" height="55" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="505.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Supabase
+BD actualizada</text>
+<rect x="100" y="580" width="200" height="55" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="200.0" y="605.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">router.refresh()
+page.tsx re-ejecuta</text>
+<rect x="100" y="680" width="200" height="55" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="200.0" y="697.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Dashboard actualizado</text>
+<defs><marker id="a-57cc3ebdbae142dca884" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="200" y1="135" x2="200" y2="180" stroke="#868e96" stroke-width="2" marker-end="url(#a-57cc3ebdbae142dca884)"/>
+<defs><marker id="a-2cfd776541a5488f8d90" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="200" y1="235" x2="200" y2="280" stroke="#868e96" stroke-width="2" marker-end="url(#a-2cfd776541a5488f8d90)"/>
+<defs><marker id="a-30b01ea7916d446aadc8" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="200" y1="335" x2="200" y2="380" stroke="#868e96" stroke-width="2" marker-end="url(#a-30b01ea7916d446aadc8)"/>
+<defs><marker id="a-e0999708c05b4944a447" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="200" y1="435" x2="200" y2="480" stroke="#868e96" stroke-width="2" marker-end="url(#a-e0999708c05b4944a447)"/>
+<defs><marker id="a-74100627451a4e96aa25" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="200" y1="535" x2="200" y2="580" stroke="#868e96" stroke-width="2" marker-end="url(#a-74100627451a4e96aa25)"/>
+<defs><marker id="a-563084139fe5496c9b96" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="200" y1="635" x2="200" y2="680" stroke="#868e96" stroke-width="2" marker-end="url(#a-563084139fe5496c9b96)"/>
+</svg>

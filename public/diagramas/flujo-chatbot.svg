@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-32.90299199720732 -12.706921963075956 495.0 677.706921963076" width="495" height="677">
+<rect x="-32.90299199720732" y="-12.706921963075956" width="495.0" height="677.706921963076" fill="#ffffff"/>
+<text x="-2.902991997207323" y="41.293078036924044" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO DEL CHATBOT — MiniMax AI</text>
+<rect x="100" y="80" width="220" height="55" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="210.0" y="97.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Usuario escribe pregunta</text>
+<rect x="100" y="180" width="220" height="55" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="210.0" y="205.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ChatBox.tsx
+fetch /api/chat</text>
+<rect x="100" y="280" width="220" height="55" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="210.0" y="305.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">api/chat/route.ts
+formatea contexto</text>
+<rect x="100" y="380" width="220" height="55" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="210.0" y="405.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">MiniMax API
+api.minimax.io/v1</text>
+<rect x="100" y="480" width="220" height="55" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="210.0" y="505.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Respuesta
++ Razonamiento</text>
+<rect x="100" y="580" width="220" height="55" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="210.0" y="605.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">ChatBox: burbuja
++ acordeón</text>
+<defs><marker id="a-0d2cbbc86f5a4447836c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="135" x2="210" y2="180" stroke="#868e96" stroke-width="2" marker-end="url(#a-0d2cbbc86f5a4447836c)"/>
+<defs><marker id="a-d02bd57161d048acae8e" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="235" x2="210" y2="280" stroke="#868e96" stroke-width="2" marker-end="url(#a-d02bd57161d048acae8e)"/>
+<defs><marker id="a-0d4accad60064e3bb496" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="335" x2="210" y2="380" stroke="#868e96" stroke-width="2" marker-end="url(#a-0d4accad60064e3bb496)"/>
+<defs><marker id="a-6bba10f15da1423d8f4f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="435" x2="210" y2="480" stroke="#868e96" stroke-width="2" marker-end="url(#a-6bba10f15da1423d8f4f)"/>
+<defs><marker id="a-35bce4cfe029445698c9" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="210" y1="535" x2="210" y2="580" stroke="#868e96" stroke-width="2" marker-end="url(#a-35bce4cfe029445698c9)"/>
+</svg>

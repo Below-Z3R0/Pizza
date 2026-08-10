@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-35.333984375 -10.427734375 538.0 510.427734375" width="538" height="510">
+<rect x="-35.333984375" y="-10.427734375" width="538.0" height="510.427734375" fill="#ffffff"/>
+<text x="-5.333984375" y="43.572265625" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO: Cambio de Método de Proyección</text>
+<rect x="100" y="80" width="240" height="50" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="220.0" y="105.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">MethodSelector
+usuario clickea</text>
+<rect x="100" y="165" width="240" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="220.0" y="190.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">router.push
+/?metodo=ponderada</text>
+<rect x="100" y="250" width="240" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="220.0" y="275.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">page.tsx
+searchParams.metodo</text>
+<rect x="100" y="335" width="240" height="50" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="220.0" y="360.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">data.ts
+usa mediaPonderada()</text>
+<rect x="100" y="420" width="240" height="50" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="220.0" y="445.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Nuevas proyecciones
+Dashboard actualizado</text>
+<defs><marker id="a-663c121161704ed8a94a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="220" y1="130" x2="220" y2="165" stroke="#868e96" stroke-width="2" marker-end="url(#a-663c121161704ed8a94a)"/>
+<defs><marker id="a-049d120a179e43b4b931" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="220" y1="215" x2="220" y2="250" stroke="#868e96" stroke-width="2" marker-end="url(#a-049d120a179e43b4b931)"/>
+<defs><marker id="a-7f594d34b255439ab0cb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="220" y1="300" x2="220" y2="335" stroke="#868e96" stroke-width="2" marker-end="url(#a-7f594d34b255439ab0cb)"/>
+<defs><marker id="a-b7d3e4a2b13a494cbe9c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="220" y1="385" x2="220" y2="420" stroke="#868e96" stroke-width="2" marker-end="url(#a-b7d3e4a2b13a494cbe9c)"/>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="3.468051449686527 -4.273349515627736 426.0 589.2733495156277" width="426" height="589">
+<rect x="3.468051449686527" y="-4.273349515627736" width="426.0" height="589.2733495156277" fill="#ffffff"/>
+<text x="33.46805144968653" y="49.726650484372264" fill="#1e1e1e" font-size="24" text-anchor="left" font-weight="bold" font-family="sans-serif">FLUJO: Detección de Anomalías</text>
+<rect x="100" y="80" width="210" height="50" rx="6" fill="#d0bfff" stroke="#7950f2" stroke-width="2"/>
+<text x="205.0" y="105.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">anomalias.ts
+detectarAnomalias()</text>
+<rect x="100" y="165" width="210" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="205.0" y="190.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Agrupa por
+ingrediente_id</text>
+<rect x="100" y="250" width="210" height="50" rx="6" fill="#a5d8ff" stroke="#1971c2" stroke-width="2"/>
+<text x="205.0" y="275.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Mediana entre
+sucursales</text>
+<rect x="100" y="335" width="210" height="50" rx="6" fill="#ffd8a8" stroke="#e8590c" stroke-width="2"/>
+<text x="205.0" y="360.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Si &gt; 2x mediana
+→ marca anomalía</text>
+<rect x="100" y="420" width="210" height="50" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="205.0" y="437.125" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">Badge 'Anomalías (N)'</text>
+<rect x="100" y="505" width="210" height="50" rx="6" fill="#b2f2bb" stroke="#2b8a3e" stroke-width="2"/>
+<text x="205.0" y="530.25" fill="#1e1e1e" font-size="13" text-anchor="middle" font-weight="bold" font-family="sans-serif">AnomaliasSection
+lista de alertas</text>
+<defs><marker id="a-c3eb35ab9903438cad53" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="205" y1="130" x2="205" y2="165" stroke="#868e96" stroke-width="2" marker-end="url(#a-c3eb35ab9903438cad53)"/>
+<defs><marker id="a-dfc5160d89444a7fa6da" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="205" y1="215" x2="205" y2="250" stroke="#868e96" stroke-width="2" marker-end="url(#a-dfc5160d89444a7fa6da)"/>
+<defs><marker id="a-b77cda62b37d4d7086bc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="205" y1="300" x2="205" y2="335" stroke="#868e96" stroke-width="2" marker-end="url(#a-b77cda62b37d4d7086bc)"/>
+<defs><marker id="a-ef1e21e474124015a0f0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="205" y1="385" x2="205" y2="420" stroke="#868e96" stroke-width="2" marker-end="url(#a-ef1e21e474124015a0f0)"/>
+<defs><marker id="a-c34377f2774844d2add5" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#868e96"/></marker></defs>
+<line x1="205" y1="470" x2="205" y2="505" stroke="#868e96" stroke-width="2" marker-end="url(#a-c34377f2774844d2add5)"/>
+</svg>
