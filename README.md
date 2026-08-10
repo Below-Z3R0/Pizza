@@ -4,6 +4,14 @@
 
 ---
 
+## 🎬 Video de presentación
+
+[![Barrio Pizza — Dashboard de Compras](https://img.youtube.com/vi/G0lXO1VKw28/0.jpg)](https://youtu.be/G0lXO1VKw28)
+
+> 📽️ Recorrido por el dashboard: cómo detecta las alertas de compra, el método de proyección y los casos raros manejados.
+
+---
+
 ## 🚀 Quick Start
 
 ```bash
