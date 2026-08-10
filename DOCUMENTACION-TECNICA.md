@@ -2,6 +2,8 @@
 
 > Documentación completa del proyecto para el video explicativo y referencia futura.
 
+![Arquitectura Server/Client](public/diagramas/arquitectura-server-client.png)
+
 ---
 
 ## 1. Estructura del proyecto
